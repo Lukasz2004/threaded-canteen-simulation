@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.pwr.lczerwinski.threaded_canteen.gui.GUI">
+   <children>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#runSimulation" text="Start Default Simulation" />
+            <Button layoutX="768.0" layoutY="13.0" mnemonicParsing="false" onAction="#runCustomSimulation" text="Start Custom Simulation" />
+        </buttons>
+      </ButtonBar>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="900.0">
+         <children>
+            <Pane layoutX="210.0" layoutY="10.0" prefWidth="200.0">
+               <children>
+                  <VBox prefWidth="200.0">
+                     <children>
+                        <Label text="Klienci">
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Ebrima" size="19.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" prefHeight="287.0" prefWidth="200.0">
+                           <content>
+                              <VBox fx:id="clientList">
+                                 <children>
+                                    <Label text="-" />
+                                 </children>
+                                 <padding>
+                                    <Insets right="15.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0">
+                     <children>
+                        <Label text="Punkty wydawania">
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Ebrima" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="foodStation0Employee" layoutX="10.0" layoutY="10.0" text="Punkt 1: " />
+                        <Label fx:id="foodStation0Queue" layoutX="10.0" layoutY="27.0" text="..............">
+                           <font>
+                              <Font name="Courier New" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="foodStation1Employee" layoutX="10.0" layoutY="127.0" text="Punkt 2:" />
+                        <Label fx:id="foodStation1Queue" layoutX="10.0" layoutY="161.0" text="..............">
+                           <font>
+                              <Font name="Courier New" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane layoutX="210.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Kasy">
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Ebrima" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="checkout0Employee" layoutX="10.0" layoutY="10.0" text="Kasa 1:" />
+                        <Label fx:id="checkout0Queue" text="..............">
+                           <font>
+                              <Font name="Courier New" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="checkout1Employee" layoutX="10.0" layoutY="127.0" text="Kasa 2:" />
+                        <Label fx:id="checkout1Queue" layoutX="10.0" layoutY="79.0" text="..............">
+                           <font>
+                              <Font name="Courier New" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="checkout2Employee" layoutX="10.0" layoutY="161.0" text="Kasa 3:" />
+                        <Label fx:id="checkout2Queue" layoutX="10.0" layoutY="145.0" text="..............">
+                           <font>
+                              <Font name="Courier New" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="checkout3Employee" layoutX="10.0" layoutY="195.0" text="Kasa 4:" />
+                        <Label fx:id="checkout3Queue" layoutX="10.0" layoutY="160.0" text="..............">
+                           <font>
+                              <Font name="Courier New" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane layoutX="410.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Stoliki">
+                           <VBox.margin>
+                              <Insets bottom="25.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Ebrima" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="seating" prefHeight="267.0" prefWidth="200.0">
+                           <font>
+                              <Font name="Courier New" size="12.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Pane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="900.0">
+         <children>
+            <Pane layoutX="210.0" layoutY="10.0" prefWidth="200.0">
+               <children>
+                  <VBox prefWidth="200.0">
+                     <children>
+                        <Label layoutX="10.0" layoutY="10.0" text="Pracownicy na przerwie">
+                           <font>
+                              <Font name="Ebrima" size="19.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="onBreak" prefWidth="200.0">
+                           <font>
+                              <Font name="Courier New" size="12.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane layoutX="30.0" layoutY="20.0" maxHeight="-Infinity" prefHeight="0.0" prefWidth="450.0">
+               <children>
+                  <VBox fx:id="chartVbox" maxHeight="1.7976931348623157E308" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" text="Dania dnia">
+                           <font>
+                              <Font name="Ebrima" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <Pane layoutX="240.0" layoutY="20.0" maxHeight="-Infinity" prefHeight="0.0" prefWidth="200.0">
+               <children>
+                  <VBox fx:id="chartVbox1" maxHeight="1.7976931348623157E308" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" text="Szybkość symulacji">
+                           <font>
+                              <Font name="Ebrima" size="19.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="speedSlider" blockIncrement="0.1" max="5.0" min="0.1" value="1.0" />
+                        <Label fx:id="speedShow" text="x1" />
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
